@@ -1,1 +1,1 @@
-.example-camera:before{  height : 206px ; width: 406px; display:block; content:''; background:url('example/camera.svg') no-repeat; }
+.example-camera:before{  height : 206px ; width: 406px; display:block; content:url('example/camera.svg');  }

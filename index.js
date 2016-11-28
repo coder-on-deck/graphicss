@@ -25,7 +25,7 @@ function graphicss (config) {
     return size
   }).map((size) => {
     var classname = util.format(config.classnamePattern, size.filename)
-    size.css = `.${classname}:before{  height : ${size.height}px ; width: ${size.width}px; display:block; content:''; background:url('${size.file}') no-repeat; }`
+    size.css = `.${classname}{ display:inline-block; } .${classname}:before{  height : ${size.height}px ; width: ${size.width}px; display:block; content:url('${size.file}');}`
     size.html = `
     <div>
       <div>
