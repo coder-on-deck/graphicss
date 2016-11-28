@@ -3,17 +3,19 @@ const fs = require('fs')
 const path = require('path')
 const glob = require('glob-all')
 const util = require('util')
+var log = require('loglevel')
 
 function graphicss (config) {
-  const files = glob.sync(config.include)
-
+  log.setLevel(config.loglevel || 'silent')
   config = util._extend({
     'outdir': 'dist',
     'outfilename': 'graphics',
-    'include': ['**/*.js', '!node_modules/**/*'],
+    'include': ['**/*.{svg,png}', '!node_modules/**/*'],
     'classnamePattern': 'icon-%s'
   }, config)
-
+  log.debug('config is', config)
+  const files = glob.sync(config.include)
+  log.debug('files are', files)
   var sizes = files.map((f) => {
     var size = imageSize(f)
     size.file = f
@@ -52,8 +54,8 @@ function graphicss (config) {
     </html>
 `
 
-  fs.writeFileSync(`dist/${config.outfilename}.css`, sizes.map((s) => s.css).join(''))
-  fs.writeFileSync(`dist/${config.outfilename}.html`, html)
+  fs.writeFileSync(`${config.outdir}/${config.outfilename}.css`, sizes.map((s) => s.css).join(''))
+  fs.writeFileSync(`${config.outdir}/${config.outfilename}.html`, html)
 }
 
 module.exports.graphicss = graphicss

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "standard",
-    "lint:fix": "standard --fix"
+    "lint:fix": "standard --fix",
+    "make:example": "mkdir -p example-dist && node cli.js --outdir example-dist --outfilename example --include example/*.{svg,png} --classnamePattern example-%s --loglevel debug"
   },
   "devDependencies": {
     "standard": "^8.6.0"
@@ -13,6 +14,7 @@
   "dependencies": {
     "glob-all": "^3.1.0",
     "image-size": "^0.5.0",
+    "loglevel": "^1.4.1",
     "minimist": "^1.2.0"
   }
 }
