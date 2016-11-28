@@ -39,3 +39,8 @@ Note that the css assumes the path to the graphics remains the same. So if the g
 The intention is that you will copy the graphics folders as is (after optimization with svgo perhaps?) to your dist folder.
 
 Alongside it there's an html file showing all the possible icons. 
+
+
+# How can I resize the image? 
+
+You can use `transform: scale(.5);` (for example) to change the image's scale. 
