@@ -44,3 +44,8 @@ Alongside it there's an html file showing all the possible icons.
 # How can I resize the image? 
 
 You can use `transform: scale(.5);` (for example) to change the image's scale. 
+
+
+# Roadmap
+ 
+ - Use [animated-parakeet](https://github.com/coder-on-deck/animated-parakeet) to generate the css
